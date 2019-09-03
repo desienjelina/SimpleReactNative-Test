@@ -21,33 +21,15 @@ export default class edit extends Component {
     this.data = this.props.navigation.getParam("data", null)
 
     this.state = {
-      category_id : this.data.category_id,
-      nama : this.data.nama,
-      pic : this.data.pic,
-      anggota : this.data.anggota,
-      notes : this.data.notes,
-      jenis_task : this.data.jenis_task,
-      tindak_lanjut : this.data.tindak_lanjut,
-      task_start : this.data.task_start,
-      task_end : this.data.task_end,
-      task_date : this.data.task_date,
-      task_due : this.data.task_due
+      productName : this.data.productName,
+      description : this.data.description
     }
   }
 
   submitTask(){
     let body = {
-      "category_id" : this.state.category_id,
-      "nama" : this.state.nama,
-      "pic" : this.state.pic,
-      "anggota" : this.state.anggota,
-      "notes" : this.state.notes,
-      "jenis_task" : this.state.jenis_task,
-      "tindak_lanjut" : this.state.tindak_lanjut,
-      "task_start" : this.state.task_start,
-      "task_end" : this.state.task_end,
-      "task_date" : this.state.task_date,
-      "task_due" : this.state.task_due
+      "productName" : this.state.productName,
+      "description" : this.state.description
     }
 
     Resource.editTask(body, this.data.id)
@@ -62,17 +44,8 @@ export default class edit extends Component {
 
   resetForm(){
     this.setState({
-      category_id : "",
-      nama : "",
-      pic : "",
-      anggota : "",
-      notes : "",
-      jenis_task : "",
-      tindak_lanjut : "",
-      task_start : "",
-      task_end : "",
-      task_date : "",
-      task_due : ""
+      productName : "",
+      description : ""
     })
   }
 
@@ -81,69 +54,15 @@ export default class edit extends Component {
       <View style={{padding: 30}}>
         <TextInput 
           style={myStyle.form} 
-          value={this.state.category_id}
-          onChangeText={(category_id) => this.setState({category_id})}
-          placeholder="Category"
+          value={this.state.productName}
+          onChangeText={(task_date) => this.setState({productName})}
+          placeholder="Product Name"
         />
         <TextInput 
           style={myStyle.form} 
-          value={this.state.nama}
-          onChangeText={(nama) => this.setState({nama})}
-          placeholder={"Nama"}
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.pic}
-          onChangeText={(pic) => this.setState({pic})}
-          placeholder="P.I.C"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.anggota}
-          onChangeText={(anggota) => this.setState({anggota})}
-          placeholder="Anggota"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.notes}
-          onChangeText={(notes) => this.setState({notes})}
-          placeholder="Notes"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.jenis_task}
-          onChangeText={(jenis_task) => this.setState({jenis_task})}
-          placeholder="Jenis Task"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.tindak_lanjut}
-          onChangeText={(tindak_lanjut) => this.setState({tindak_lanjut})}
-          placeholder="Tindak Lanjut"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.task_start}
-          onChangeText={(task_start) => this.setState({task_start})}
-          placeholder="Task Start"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.task_end}
-          onChangeText={(task_end) => this.setState({task_end})}
-          placeholder="Task End"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.task_date}
-          onChangeText={(task_date) => this.setState({task_date})}
-          placeholder="Task Date"
-        />
-        <TextInput 
-          style={myStyle.form} 
-          value={this.state.task_due}
-          onChangeText={(task_due) => this.setState({task_due})}
-          placeholder="Task Due"
+          value={this.state.description}
+          onChangeText={(task_due) => this.setState({description})}
+          placeholder="Description"
         />
         <TouchableOpacity style={{marginTop: 20}} onPress={() => this.submitTask()}>
           <View style={{backgroundColor:"#F7CA18", padding: 10}}>

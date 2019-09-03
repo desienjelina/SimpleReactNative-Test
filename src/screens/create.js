@@ -20,32 +20,32 @@ export default class create extends Component {
     super(props)
 
     this.state = {
-      brandId : "",
-      colour : "",
+      // brandId : "",
+      // colour : "",
       description : "",
-      district : "",
-      extendInfo : "",
-      location : "",
+      // district : "",
+      // extendInfo : "",
+      // location : "",
       productName : "",
-      province : "",
-      subDistrict : ""
+      // province : "",
+      // subDistrict : ""
     }
   }
 
   submitTask(){
     let body = {
-      "brandId" : this.state.brandId,
-      "colour" : this.state.colour,
+      // "brandId" : this.state.brandId,
+      // "colour" : this.state.colour,
       "description" : this.state.description,
-      "district" : this.state.district,
-      "extendInfo" : this.state.extendInfo,
-      "location" : this.state.location,
+      // "district" : this.state.district,
+      // "extendInfo" : this.state.extendInfo,
+      // "location" : this.state.location,
       "productName" : this.state.productName,
-      "province" : this.state.province,
-      "subDistrict" : this.state.subDistrict
+      // "province" : this.state.province,
+      // "subDistrict" : this.state.subDistrict
     }
 
-    Resource.createTask(body)
+    Resource.addProduct(body)
     .then((res) => {
       this.resetForm();
       alert("Submit Sukses")
@@ -57,22 +57,22 @@ export default class create extends Component {
 
   resetForm(){
     this.setState({
-      brandId : "",
-      colour : "",
+      // brandId : "",
+      // colour : "",
       description : "",
-      district : "",
-      extendInfo : "",
-      location : "",
+      // district : "",
+      // extendInfo : "",
+      // location : "",
       productName : "",
-      province : "",
-      subDistrict : ""
+      // province : "",
+      // subDistrict : ""
     })
   }
 
   render() {
     return (
       <View style={{padding: 30}}>
-        <TextInput 
+        {/* <TextInput 
           style={myStyle.form} 
           value={this.state.brandId}
           onChangeText={(brandId) => this.setState({brandId})}
@@ -83,14 +83,14 @@ export default class create extends Component {
           value={this.state.colour}
           onChangeText={(colour) => this.setState({colour})}
           placeholder="Colour"
-        />
+        /> */}
         <TextInput 
           style={myStyle.form} 
           value={this.state.description}
           onChangeText={(description) => this.setState({description})}
           placeholder="Description"
         />
-        <TextInput 
+        {/* <TextInput 
           style={myStyle.form} 
           value={this.state.district}
           onChangeText={(district) => this.setState({district})}
@@ -107,14 +107,14 @@ export default class create extends Component {
           value={this.state.location}
           onChangeText={(location) => this.setState({location})}
           placeholder="Location"
-        />
+        /> */}
         <TextInput 
           style={myStyle.form} 
           value={this.state.productName}
           onChangeText={(productName) => this.setState({productName})}
           placeholder="Product Name"
         />
-        <TextInput 
+        {/* <TextInput 
           style={myStyle.form} 
           value={this.state.province}
           onChangeText={(province) => this.setState({province})}
@@ -125,7 +125,7 @@ export default class create extends Component {
           value={this.state.subDistrict}
           onChangeText={(subDistrict) => this.setState({subDistrict})}
           placeholder="Sub District"
-        />
+        /> */}
         
         <TouchableOpacity style={{marginTop: 20}} onPress={() => this.submitTask()}>
           <View style={{backgroundColor:"#F7CA18", padding: 10}}>

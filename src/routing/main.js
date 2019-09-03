@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import {createStackNavigator, createMaterialTopTabNavigator} from 'react-navigation'
-import mainScreen from '../screens/main'
+import mainScreen from '../screens/products'
 import createScreen from '../screens/create'
 import detailScreen from '../screens/detail'
 import editScreen from '../screens/edit'
@@ -61,7 +61,7 @@ export default Main = createStackNavigator({
   MainScreen:{
       screen: MainTab,
       navigationOptions: (props) => ({
-        title: "Beranda",
+        title: "Sony Motor",
       })
   },
   DetailScreen:{

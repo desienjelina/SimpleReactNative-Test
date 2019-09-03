@@ -2,11 +2,11 @@ import Request from "./Request";
 import URI from "../config/Uri"
 
 class Resource {
-  async getTask(){
+  async getProduct(){
     const header = {
-      "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJrYXJ5YXdhbiIsInN1YiI6MiwiaWF0IjoxNTYxOTE2NzI5LCJleHAiOjMxNzEzMTQzNjcyOX0.JfmOjuyl39_yDsDEj2DjW21Q1QKroxWvRQ3UU5xQnzI",
+      //"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJrYXJ5YXdhbiIsInN1YiI6MiwiaWF0IjoxNTYxOTE2NzI5LCJleHAiOjMxNzEzMTQzNjcyOX0.JfmOjuyl39_yDsDEj2DjW21Q1QKroxWvRQ3UU5xQnzI",
     }
-    let res = await Request.get(URI.RESOURCE + URI.ENDPOINT_GET_TASK, header);
+    let res = await Request.get(URI.RESOURCE + URI.ENDPOINT_GET_PRODUCT, header);
     
     return new Promise((resolve, reject) => {
       try{
@@ -17,7 +17,7 @@ class Resource {
     });
   }
 
-  async createTask(body){
+  async addProduct(body){
     const header = {
       "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJrYXJ5YXdhbiIsInN1YiI6MiwiaWF0IjoxNTYxOTE2NzI5LCJleHAiOjMxNzEzMTQzNjcyOX0.JfmOjuyl39_yDsDEj2DjW21Q1QKroxWvRQ3UU5xQnzI",
       "Content-Type": "application/json",
@@ -25,7 +25,7 @@ class Resource {
 
     console.log(JSON.stringify(body))
 
-    let res = await Request.post(URI.RESOURCE + URI.ENDPOINT_CREATE_TASK, header, JSON.stringify(body));
+    let res = await Request.post(URI.RESOURCE + URI.ENDPOINT_ADD_PRODUCT, header, JSON.stringify(body));
     
     return new Promise((resolve, reject) => {
       try{
